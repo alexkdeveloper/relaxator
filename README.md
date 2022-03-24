@@ -1,1 +1,5 @@
-# relaxator
+## Relaxator
+
+![Relaxator](data/screenshot.png)
+
+

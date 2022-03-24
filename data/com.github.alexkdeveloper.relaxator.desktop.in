@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Relaxator
+Comment=Relax to soothing sounds of nature
+GenericName=Relaxator
+Exec=com.github.alexkdeveloper.relaxator
+Icon=com.github.alexkdeveloper.relaxator
+Terminal=false
+X-GNOME-Gettext-Domain=Relaxator
+Categories=GNOME;GTK;AudioVideo;Player;Audio;
