@@ -1,4 +1,4 @@
-project ('com.github.alexkdeveloper.relaxator', 'vala', 'c', version: '1.1.0')
+project ('com.github.alexkdeveloper.relaxator', 'vala', 'c', version: '1.0.0')
 
 gnome = import('gnome')
 i18n = import('i18n')
