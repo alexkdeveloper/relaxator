@@ -83,9 +83,12 @@ namespace Relaxator {
             toggle_waves.get_style_context ().add_class ("button");
             toggle_rain.get_style_context ().add_class ("button");
 
-            var header = new Gtk.HeaderBar ();
-            header.title = "Relaxator";
-        
+            var headerbar = new Gtk.HeaderBar ();
+            headerbar.title = "Relaxator";
+            headerbar.get_style_context().add_class("flat");
+            headerbar.show_close_button = true;
+            set_titlebar(headerbar);
+
             volume1 = new Gtk.Scale.with_range (Gtk.Orientation.HORIZONTAL, 0, 8, 1);
             volume1.set_draw_value (false);
             volume1.set_value (7);
