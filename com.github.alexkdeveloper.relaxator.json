@@ -1,8 +1,8 @@
 {
     "app-id": "com.github.alexkdeveloper.relaxator",
-    "runtime": "io.elementary.Platform",
-    "runtime-version": "6.1",
-    "sdk": "io.elementary.Sdk",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "42",
+    "sdk": "org.gnome.Sdk",
     "command": "com.github.alexkdeveloper.relaxator",
     "finish-args": [
        "--device=dri", 
