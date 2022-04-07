@@ -27,7 +27,7 @@ parts:
       - gettext
     organize:
       snap/relaxator/current/usr: usr
-    parse-info: [usr/share/appdata/com.github.alexkdeveloper.relaxator.appdata.xml]
+    parse-info: [usr/share/metainfo/com.github.alexkdeveloper.relaxator.appdata.xml]
 
 slots:
   dbus-daemon:
