@@ -8,11 +8,6 @@ add_project_arguments(
     language: 'c'
 )
 
-add_project_arguments(
-    ['--vapidir', join_paths(meson.current_source_dir(), 'vapi')],
-    language: 'vala'
-)
-
 asresources = gnome.compile_resources(
     'as-resources',
     join_paths('data', meson.project_name()) + '.gresource.xml',
@@ -22,7 +17,7 @@ asresources = gnome.compile_resources(
 
 dependencies = [
     dependency('glib-2.0'),
-    dependency('gtk+-3.0'),
+    dependency('gtk4'),
     dependency('gstreamer-1.0')
 ]
 
