@@ -21,8 +21,7 @@ public class Application : Gtk.Application {
         }
 
         window = new Window (this);
-        window.delete_event.connect(window.main_quit);
-        window.show_all ();
+        window.show ();
     }
 
     public static Application get_instance () {
