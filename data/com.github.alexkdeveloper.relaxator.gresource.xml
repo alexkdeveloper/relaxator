@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/github/alexkdeveloper/relaxator">
-    <file compressed="true">icons/night.svg</file>
-    <file compressed="true">icons/forest.svg</file>
-    <file compressed="true">icons/waves.svg</file>
-    <file compressed="true">icons/rain.svg</file>
+    <file compressed="true">images/night.svg</file>
+    <file compressed="true">images/forest.svg</file>
+    <file compressed="true">images/waves.svg</file>
+    <file compressed="true">images/rain.svg</file>
     <file compressed="true">sounds/forest.ogg</file>
     <file compressed="true">sounds/night.ogg</file>
     <file compressed="true">sounds/waves.ogg</file>

@@ -34,6 +34,22 @@ install_data(
 )
 
 install_data(
+    join_paths('images', 'waves.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'forest.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'night.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'rain.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
     join_paths('sounds', 'waves.ogg'),
     install_dir : join_paths('share', 'Relaxator', 'sounds'))
 
