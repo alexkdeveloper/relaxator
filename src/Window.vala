@@ -4,7 +4,7 @@ using GLib;
 
 namespace Relaxator {
 
-    public class Window : Gtk.Window {
+    public class Window : Adw.Window {
 
         private Bus bus;
         private Gtk.ToggleButton toggle_forest;
@@ -20,7 +20,7 @@ namespace Relaxator {
         Gst.Bus sea_bus;
         Gst.Bus rain_bus;
 
-        public Window (Gtk.Application application) {
+        public Window (Adw.Application application) {
             set_application(application);
             player_init ();
             bus = new Bus (pipeline_forest, pipeline_night, pipeline_waves, pipeline_rain);
@@ -49,13 +49,10 @@ namespace Relaxator {
             toggle_waves.set_child (image_waves);
             toggle_rain.set_child (image_rain);
 
-            var headerbar = new HeaderBar ();
-            headerbar.get_style_context().add_class("flat");
-            set_titlebar(headerbar);
-            
             var grid = new Grid ();
-            grid.halign = Gtk.Align.CENTER;
-            grid.valign = Gtk.Align.CENTER;
+            grid.vexpand = true;
+            grid.halign = Align.CENTER;
+            grid.valign = Align.CENTER;
             grid.column_spacing = 50;
             grid.margin_bottom = 10;
             grid.margin_top = 10;
@@ -66,7 +63,11 @@ namespace Relaxator {
             grid.attach (toggle_night, 2, 1, 1, 1);
             grid.attach (toggle_waves, 3, 1, 1, 1);
             grid.attach (toggle_rain, 4, 1, 1, 1);
-            set_child (grid);
+            var headerbar = new Adw.HeaderBar();
+            var box = new Box (Orientation.VERTICAL, 0);
+            box.append (headerbar);
+            box.append (grid);
+            set_content (box);
         }
 
         public void player_init () {

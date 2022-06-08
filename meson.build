@@ -18,6 +18,7 @@ asresources = gnome.compile_resources(
 dependencies = [
     dependency('glib-2.0'),
     dependency('gtk4'),
+    dependency('libadwaita-1'),
     dependency('gstreamer-1.0')
 ]
 

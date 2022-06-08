@@ -4,7 +4,7 @@ using Gtk;
 
 namespace Relaxator {
 
-public class Application : Gtk.Application {
+public class Application : Adw.Application {
 
     private static Application app;
     private Window window = null;
