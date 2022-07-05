@@ -10,12 +10,16 @@ namespace Relaxator {
     private Element pipeline_night;
     private Element pipeline_sea;
     private Element pipeline_rain;
+    private Element pipeline_fire;
+    private Element pipeline_cat;
 
-    public Bus (Element pipeline_forest, Element pipeline_night, Element pipeline_sea, Element pipeline_rain) {
+    public Bus (Element pipeline_forest, Element pipeline_night, Element pipeline_sea, Element pipeline_rain, Element pipeline_fire, Element pipeline_cat) {
         this.pipeline_forest = pipeline_forest;
         this.pipeline_night = pipeline_night;
         this.pipeline_sea = pipeline_sea;
         this.pipeline_rain = pipeline_rain;
+        this.pipeline_fire = pipeline_fire;
+        this.pipeline_cat = pipeline_cat;
     }
 
     public void parse_message (Message message){
@@ -55,6 +59,18 @@ namespace Relaxator {
             this.pipeline_rain.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
             this.pipeline_rain.set_state (Gst.State.NULL);
             this.pipeline_rain.set_state (Gst.State.PLAYING);
+          }
+
+          if(message.src == this.pipeline_fire){
+            this.pipeline_fire.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
+            this.pipeline_fire.set_state (Gst.State.NULL);
+            this.pipeline_fire.set_state (Gst.State.PLAYING);
+          }
+
+          if(message.src == this.pipeline_cat){
+            this.pipeline_cat.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
+            this.pipeline_cat.set_state (Gst.State.NULL);
+            this.pipeline_cat.set_state (Gst.State.PLAYING);
           }
           break;
 
