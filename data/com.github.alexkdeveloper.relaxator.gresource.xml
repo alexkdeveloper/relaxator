@@ -7,12 +7,18 @@
     <file compressed="true">images/rain.svg</file>
     <file compressed="true">images/fire.svg</file>
     <file compressed="true">images/cat.svg</file>
+    <file compressed="true">images/city.svg</file>
+    <file compressed="true">images/stream.svg</file>
+    <file compressed="true">images/train.svg</file>
     <file compressed="true">sounds/forest.ogg</file>
     <file compressed="true">sounds/night.ogg</file>
     <file compressed="true">sounds/waves.ogg</file>
     <file compressed="true">sounds/rain.ogg</file>
     <file compressed="true">sounds/fire.ogg</file>
     <file compressed="true">sounds/cat.ogg</file>
+    <file compressed="true">sounds/city.ogg</file>
+    <file compressed="true">sounds/stream.ogg</file>
+    <file compressed="true">sounds/train.ogg</file>
   </gresource>
 </gresources>
 

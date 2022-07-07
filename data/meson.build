@@ -53,6 +53,18 @@ install_data(
     install_dir : join_paths('share', 'Relaxator', 'images'))
 
 install_data(
+    join_paths('images', 'city.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'stream.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'train.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
     join_paths('sounds', 'waves.ogg'),
     install_dir : join_paths('share', 'Relaxator', 'sounds'))
 
@@ -74,4 +86,16 @@ install_data(
 
 install_data(
     join_paths('sounds', 'cat.ogg'),
+    install_dir : join_paths('share', 'Relaxator', 'sounds'))
+
+install_data(
+    join_paths('sounds', 'city.ogg'),
+    install_dir : join_paths('share', 'Relaxator', 'sounds'))
+
+install_data(
+    join_paths('sounds', 'stream.ogg'),
+    install_dir : join_paths('share', 'Relaxator', 'sounds'))
+
+install_data(
+    join_paths('sounds', 'train.ogg'),
     install_dir : join_paths('share', 'Relaxator', 'sounds'))

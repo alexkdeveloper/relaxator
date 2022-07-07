@@ -13,23 +13,32 @@ namespace Relaxator {
         private Gtk.ToggleButton toggle_rain;
         private Gtk.ToggleButton toggle_fire;
         private Gtk.ToggleButton toggle_cat;
+        private Gtk.ToggleButton toggle_city;
+        private Gtk.ToggleButton toggle_stream;
+        private Gtk.ToggleButton toggle_train;
         private Gst.Element pipeline_forest;
         private Gst.Element pipeline_night;
         private Gst.Element pipeline_waves;
         private Gst.Element pipeline_rain;
         private Gst.Element pipeline_fire;
         private Gst.Element pipeline_cat;
+        private Gst.Element pipeline_city;
+        private Gst.Element pipeline_stream;
+        private Gst.Element pipeline_train;
         Gst.Bus forest_bus;
         Gst.Bus night_bus;
         Gst.Bus sea_bus;
         Gst.Bus rain_bus;
         Gst.Bus fire_bus;
         Gst.Bus cat_bus;
+        Gst.Bus city_bus;
+        Gst.Bus stream_bus;
+        Gst.Bus train_bus;
 
         public Window (Adw.Application application) {
             set_application(application);
             player_init ();
-            bus = new Bus (pipeline_forest, pipeline_night, pipeline_waves, pipeline_rain, pipeline_fire, pipeline_cat);
+            bus = new Bus (pipeline_forest, pipeline_night, pipeline_waves, pipeline_rain, pipeline_fire, pipeline_cat, pipeline_city, pipeline_stream, pipeline_train);
             connect_signals ();
         }
 
@@ -42,6 +51,9 @@ namespace Relaxator {
             toggle_rain = new ToggleButton ();
             toggle_fire = new ToggleButton ();
             toggle_cat = new ToggleButton ();
+            toggle_city = new ToggleButton ();
+            toggle_stream = new ToggleButton ();
+            toggle_train = new ToggleButton ();
 
             var image_forest = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/forest.svg");
             image_forest.set_size_request (50, 50);
@@ -55,6 +67,12 @@ namespace Relaxator {
             image_fire.set_size_request (50, 50);
             var image_cat = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/cat.svg");
             image_cat.set_size_request (50, 50);
+            var image_city = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/city.svg");
+            image_city.set_size_request (50, 50);
+            var image_stream = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/stream.svg");
+            image_stream.set_size_request (50, 50);
+            var image_train = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/train.svg");
+            image_train.set_size_request (50, 50);
 
             toggle_forest.set_child (image_forest);
             toggle_night.set_child (image_night);
@@ -62,6 +80,9 @@ namespace Relaxator {
             toggle_rain.set_child (image_rain);
             toggle_fire.set_child (image_fire);
             toggle_cat.set_child (image_cat);
+            toggle_city.set_child (image_city);
+            toggle_stream.set_child (image_stream);
+            toggle_train.set_child (image_train);
 
             var grid = new Grid ();
             grid.vexpand = true;
@@ -80,6 +101,9 @@ namespace Relaxator {
             grid.attach (toggle_rain, 0, 1, 1, 1);
             grid.attach (toggle_fire, 1, 1, 1, 1);
             grid.attach (toggle_cat, 2, 1, 1, 1);
+            grid.attach (toggle_city, 0, 2, 1, 1);
+            grid.attach (toggle_stream, 1, 2, 1, 1);
+            grid.attach (toggle_train, 2, 2, 1, 1);
 
             var headerbar = new Adw.HeaderBar();
             var box = new Box (Orientation.VERTICAL, 0);
@@ -102,6 +126,12 @@ namespace Relaxator {
             pipeline_fire.set ("volume", 5.0);
             pipeline_cat = Gst.parse_launch ("playbin uri=resource:/com/github/alexkdeveloper/relaxator/sounds/cat.ogg");
             pipeline_cat.set ("volume", 5.0);
+            pipeline_city = Gst.parse_launch ("playbin uri=resource:/com/github/alexkdeveloper/relaxator/sounds/city.ogg");
+            pipeline_city.set ("volume", 5.0);
+            pipeline_stream = Gst.parse_launch ("playbin uri=resource:/com/github/alexkdeveloper/relaxator/sounds/stream.ogg");
+            pipeline_stream.set ("volume", 5.0);
+            pipeline_train = Gst.parse_launch ("playbin uri=resource:/com/github/alexkdeveloper/relaxator/sounds/train.ogg");
+            pipeline_train.set ("volume", 5.0);
         	} catch (Error e) {
         		stderr.printf ("Error: %s\n", e.message);
         	}
@@ -132,6 +162,18 @@ namespace Relaxator {
           cat_bus = pipeline_cat.get_bus ();
           cat_bus.add_signal_watch ();
           cat_bus.message.connect (bus.parse_message);
+
+          city_bus = pipeline_city.get_bus ();
+          city_bus.add_signal_watch ();
+          city_bus.message.connect (bus.parse_message);
+
+          stream_bus = pipeline_stream.get_bus ();
+          stream_bus.add_signal_watch ();
+          stream_bus.message.connect (bus.parse_message);
+
+          train_bus = pipeline_train.get_bus ();
+          train_bus.add_signal_watch ();
+          train_bus.message.connect (bus.parse_message);
 
           toggle_forest.toggled.connect (() => {
             if(toggle_forest.active){
@@ -184,6 +226,33 @@ namespace Relaxator {
             }
             else{
               pipeline_cat.set_state (Gst.State.PAUSED);
+            }
+          });
+
+          toggle_city.toggled.connect (() => {
+            if(toggle_city.active){
+              pipeline_city.set_state (Gst.State.PLAYING);
+            }
+            else{
+              pipeline_city.set_state (Gst.State.PAUSED);
+            }
+          });
+
+          toggle_stream.toggled.connect (() => {
+            if(toggle_stream.active){
+              pipeline_stream.set_state (Gst.State.PLAYING);
+            }
+            else{
+              pipeline_stream.set_state (Gst.State.PAUSED);
+            }
+          });
+
+          toggle_train.toggled.connect (() => {
+            if(toggle_train.active){
+              pipeline_train.set_state (Gst.State.PLAYING);
+            }
+            else{
+              pipeline_train.set_state (Gst.State.PAUSED);
             }
           });
         }

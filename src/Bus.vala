@@ -12,14 +12,20 @@ namespace Relaxator {
     private Element pipeline_rain;
     private Element pipeline_fire;
     private Element pipeline_cat;
+    private Element pipeline_city;
+    private Element pipeline_stream;
+    private Element pipeline_train;
 
-    public Bus (Element pipeline_forest, Element pipeline_night, Element pipeline_sea, Element pipeline_rain, Element pipeline_fire, Element pipeline_cat) {
+    public Bus (Element pipeline_forest, Element pipeline_night, Element pipeline_sea, Element pipeline_rain, Element pipeline_fire, Element pipeline_cat, Element pipeline_city, Element pipeline_stream, Element pipeline_train) {
         this.pipeline_forest = pipeline_forest;
         this.pipeline_night = pipeline_night;
         this.pipeline_sea = pipeline_sea;
         this.pipeline_rain = pipeline_rain;
         this.pipeline_fire = pipeline_fire;
         this.pipeline_cat = pipeline_cat;
+        this.pipeline_city = pipeline_city;
+        this.pipeline_stream = pipeline_stream;
+        this.pipeline_train = pipeline_train;
     }
 
     public void parse_message (Message message){
@@ -71,6 +77,24 @@ namespace Relaxator {
             this.pipeline_cat.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
             this.pipeline_cat.set_state (Gst.State.NULL);
             this.pipeline_cat.set_state (Gst.State.PLAYING);
+          }
+
+          if(message.src == this.pipeline_city){
+            this.pipeline_city.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
+            this.pipeline_city.set_state (Gst.State.NULL);
+            this.pipeline_city.set_state (Gst.State.PLAYING);
+          }
+
+          if(message.src == this.pipeline_stream){
+            this.pipeline_stream.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
+            this.pipeline_stream.set_state (Gst.State.NULL);
+            this.pipeline_stream.set_state (Gst.State.PLAYING);
+          }
+
+          if(message.src == this.pipeline_train){
+            this.pipeline_train.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
+            this.pipeline_train.set_state (Gst.State.NULL);
+            this.pipeline_train.set_state (Gst.State.PLAYING);
           }
           break;
 
