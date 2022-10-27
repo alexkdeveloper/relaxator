@@ -4,10 +4,10 @@
   <metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
   <name>Relaxator</name>
-  <summary>Relax to soothing sounds of nature</summary>
+  <summary>Relax to soothing sounds</summary>
   <description>
     <p>The application will help you relieve the accumulated stress and relax.</p>
-    <p>The program includes the sounds of the forest, the sound of the surf and other sounds of nature.</p>
+    <p>The program includes the sounds of the forest, the sound of the surf and other sounds.</p>
   </description>
   <developer_name>Alex Kryuchkov</developer_name>
   <url type="homepage">https://github.com/alexkdeveloper/relaxator</url>
@@ -20,6 +20,13 @@
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
+     <release version="1.0.6" date="2022-10-27">
+      <description>
+        <ul>
+          <li>A small update to the user interface</li>
+        </ul>
+      </description>
+    </release>
      <release version="1.0.5" date="2022-09-24">
       <description>
         <ul>
