@@ -46,14 +46,23 @@ namespace Relaxator {
             this.set_title ("Relaxator");
 
             toggle_forest = new ToggleButton ();
+            toggle_forest.add_css_class ("flat");
             toggle_night = new ToggleButton ();
+            toggle_night.add_css_class ("flat");
             toggle_waves = new ToggleButton ();
+            toggle_waves.add_css_class ("flat");
             toggle_rain = new ToggleButton ();
+            toggle_rain.add_css_class ("flat");
             toggle_fire = new ToggleButton ();
+            toggle_fire.add_css_class ("flat");
             toggle_cat = new ToggleButton ();
+            toggle_cat.add_css_class ("flat");
             toggle_city = new ToggleButton ();
+            toggle_city.add_css_class ("flat");
             toggle_stream = new ToggleButton ();
+            toggle_stream.add_css_class ("flat");
             toggle_train = new ToggleButton ();
+            toggle_train.add_css_class ("flat");
 
             var image_forest = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/forest.svg");
             image_forest.set_size_request (50, 50);
@@ -106,6 +115,7 @@ namespace Relaxator {
             grid.attach (toggle_train, 2, 2, 1, 1);
 
             var headerbar = new Adw.HeaderBar();
+            headerbar.add_css_class("flat");
             var box = new Box (Orientation.VERTICAL, 0);
             box.append (headerbar);
             box.append (grid);
