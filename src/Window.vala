@@ -27,7 +27,7 @@ namespace Relaxator {
         private Gst.Element pipeline_train;
         Gst.Bus forest_bus;
         Gst.Bus night_bus;
-        Gst.Bus sea_bus;
+        Gst.Bus waves_bus;
         Gst.Bus rain_bus;
         Gst.Bus fire_bus;
         Gst.Bus cat_bus;
@@ -64,23 +64,55 @@ namespace Relaxator {
             toggle_train = new ToggleButton ();
             toggle_train.add_css_class ("flat");
 
-            var image_forest = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/forest.svg");
+            string res_forest;
+            string res_night;
+            string res_waves;
+            string res_rain;
+            string res_fire;
+            string res_cat;
+            string res_city;
+            string res_stream;
+            string res_train;
+
+            if(Gtk.Settings.get_default().gtk_application_prefer_dark_theme == true){
+              res_forest = "/com/github/alexkdeveloper/relaxator/images/forest-light.svg";
+              res_night = "/com/github/alexkdeveloper/relaxator/images/night-light.svg";
+              res_waves = "/com/github/alexkdeveloper/relaxator/images/waves-light.svg";
+              res_rain = "/com/github/alexkdeveloper/relaxator/images/rain-light.svg";
+              res_fire = "/com/github/alexkdeveloper/relaxator/images/fire-light.svg";
+              res_cat = "/com/github/alexkdeveloper/relaxator/images/cat-light.svg";
+              res_city = "/com/github/alexkdeveloper/relaxator/images/city-light.svg";
+              res_stream = "/com/github/alexkdeveloper/relaxator/images/stream-light.svg";
+              res_train = "/com/github/alexkdeveloper/relaxator/images/train-light.svg";
+            }else{
+              res_forest = "/com/github/alexkdeveloper/relaxator/images/forest.svg";
+              res_night = "/com/github/alexkdeveloper/relaxator/images/night.svg";
+              res_waves = "/com/github/alexkdeveloper/relaxator/images/waves.svg";
+              res_rain = "/com/github/alexkdeveloper/relaxator/images/rain.svg";
+              res_fire = "/com/github/alexkdeveloper/relaxator/images/fire.svg";
+              res_cat = "/com/github/alexkdeveloper/relaxator/images/cat.svg";
+              res_city = "/com/github/alexkdeveloper/relaxator/images/city.svg";
+              res_stream = "/com/github/alexkdeveloper/relaxator/images/stream.svg";
+              res_train = "/com/github/alexkdeveloper/relaxator/images/train.svg";
+            }
+
+            var image_forest = new Image.from_resource (res_forest);
             image_forest.set_size_request (50, 50);
-            var image_night = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/night.svg");
+            var image_night = new Image.from_resource (res_night);
             image_night.set_size_request (50, 50);
-            var image_waves = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/waves.svg");
+            var image_waves = new Image.from_resource (res_waves);
             image_waves.set_size_request (50, 50);
-            var image_rain = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/rain.svg");
+            var image_rain = new Image.from_resource (res_rain);
             image_rain.set_size_request (50, 50);
-            var image_fire = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/fire.svg");
+            var image_fire = new Image.from_resource (res_fire);
             image_fire.set_size_request (50, 50);
-            var image_cat = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/cat.svg");
+            var image_cat = new Image.from_resource (res_cat);
             image_cat.set_size_request (50, 50);
-            var image_city = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/city.svg");
+            var image_city = new Image.from_resource (res_city);
             image_city.set_size_request (50, 50);
-            var image_stream = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/stream.svg");
+            var image_stream = new Image.from_resource (res_stream);
             image_stream.set_size_request (50, 50);
-            var image_train = new Image.from_resource ("/com/github/alexkdeveloper/relaxator/images/train.svg");
+            var image_train = new Image.from_resource (res_train);
             image_train.set_size_request (50, 50);
 
             toggle_forest.set_child (image_forest);
@@ -157,9 +189,9 @@ namespace Relaxator {
           night_bus.add_signal_watch ();
           night_bus.message.connect (bus.parse_message);
 
-          sea_bus = pipeline_waves.get_bus ();
-          sea_bus.add_signal_watch ();
-          sea_bus.message.connect (bus.parse_message);
+          waves_bus = pipeline_waves.get_bus ();
+          waves_bus.add_signal_watch ();
+          waves_bus.message.connect (bus.parse_message);
 
           rain_bus = pipeline_rain.get_bus ();
           rain_bus.add_signal_watch ();

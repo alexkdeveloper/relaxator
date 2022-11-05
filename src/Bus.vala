@@ -8,7 +8,7 @@ namespace Relaxator {
 
     private Element pipeline_forest;
     private Element pipeline_night;
-    private Element pipeline_sea;
+    private Element pipeline_waves;
     private Element pipeline_rain;
     private Element pipeline_fire;
     private Element pipeline_cat;
@@ -16,10 +16,10 @@ namespace Relaxator {
     private Element pipeline_stream;
     private Element pipeline_train;
 
-    public Bus (Element pipeline_forest, Element pipeline_night, Element pipeline_sea, Element pipeline_rain, Element pipeline_fire, Element pipeline_cat, Element pipeline_city, Element pipeline_stream, Element pipeline_train) {
+    public Bus (Element pipeline_forest, Element pipeline_night, Element pipeline_waves, Element pipeline_rain, Element pipeline_fire, Element pipeline_cat, Element pipeline_city, Element pipeline_stream, Element pipeline_train) {
         this.pipeline_forest = pipeline_forest;
         this.pipeline_night = pipeline_night;
-        this.pipeline_sea = pipeline_sea;
+        this.pipeline_waves = pipeline_waves;
         this.pipeline_rain = pipeline_rain;
         this.pipeline_fire = pipeline_fire;
         this.pipeline_cat = pipeline_cat;
@@ -55,10 +55,10 @@ namespace Relaxator {
             this.pipeline_night.set_state (Gst.State.PLAYING);
           }
 
-          if(message.src == this.pipeline_sea){
-            this.pipeline_sea.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
-            this.pipeline_sea.set_state (Gst.State.NULL);
-            this.pipeline_sea.set_state (Gst.State.PLAYING);
+          if(message.src == this.pipeline_waves){
+            this.pipeline_waves.seek_simple (Gst.Format.TIME,  Gst.SeekFlags.FLUSH | Gst.SeekFlags.KEY_UNIT, 0);
+            this.pipeline_waves.set_state (Gst.State.NULL);
+            this.pipeline_waves.set_state (Gst.State.PLAYING);
           }
 
           if(message.src == this.pipeline_rain){

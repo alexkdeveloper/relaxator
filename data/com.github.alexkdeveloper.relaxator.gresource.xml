@@ -10,6 +10,15 @@
     <file compressed="true">images/city.svg</file>
     <file compressed="true">images/stream.svg</file>
     <file compressed="true">images/train.svg</file>
+    <file compressed="true">images/night-light.svg</file>
+    <file compressed="true">images/forest-light.svg</file>
+    <file compressed="true">images/waves-light.svg</file>
+    <file compressed="true">images/rain-light.svg</file>
+    <file compressed="true">images/fire-light.svg</file>
+    <file compressed="true">images/cat-light.svg</file>
+    <file compressed="true">images/city-light.svg</file>
+    <file compressed="true">images/stream-light.svg</file>
+    <file compressed="true">images/train-light.svg</file>
     <file compressed="true">sounds/forest.ogg</file>
     <file compressed="true">sounds/night.ogg</file>
     <file compressed="true">sounds/waves.ogg</file>

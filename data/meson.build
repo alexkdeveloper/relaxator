@@ -65,6 +65,43 @@ install_data(
     install_dir : join_paths('share', 'Relaxator', 'images'))
 
 install_data(
+    join_paths('images', 'waves-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'forest-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'night-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'rain-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'fire-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'cat-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'city-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'stream-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+install_data(
+    join_paths('images', 'train-light.svg'),
+    install_dir : join_paths('share', 'Relaxator', 'images'))
+
+
+install_data(
     join_paths('sounds', 'waves.ogg'),
     install_dir : join_paths('share', 'Relaxator', 'sounds'))
 
