@@ -4,7 +4,7 @@ Relax to soothing sounds
 
 ![Relaxator](data/screenshot.png)
 
-<a href='https://flathub.org/apps/details/com.github.alexkdeveloper.relaxator'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+<a href='https://flathub.org/apps/details/com.github.alexkdeveloper.relaxator' target="_blank"><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
 The application is written using the following libraries:
 
