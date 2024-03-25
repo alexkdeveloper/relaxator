@@ -19,6 +19,8 @@
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1"/>
+  <translation type="gettext">com.github.alexkdeveloper.relaxator</translation>
+  <launchable type="desktop-id">com.github.alexkdeveloper.relaxator.desktop</launchable>
   <releases>
     <release version="1.0.10" date="2024-03-25">
       <description>
