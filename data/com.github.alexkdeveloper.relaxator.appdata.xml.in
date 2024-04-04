@@ -15,6 +15,7 @@
   </developer>
   <url type="homepage">https://github.com/alexkdeveloper/relaxator</url>
   <url type="bugtracker">https://github.com/alexkdeveloper/relaxator/issues/</url>
+  <url type="vcs-browser">https://github.com/alexkdeveloper/relaxator</url>
   <url type="help">http://github.com/alexkdeveloper/relaxator/issues</url>
   <screenshots>
     <screenshot type="default">
