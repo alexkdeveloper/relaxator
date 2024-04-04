@@ -10,6 +10,9 @@
     <p>The program includes the sounds of the forest, the sound of the surf and other sounds.</p>
   </description>
   <developer_name>Alex Kryuchkov</developer_name>
+  <developer id="io.github.alexkdeveloper">
+    <name>Alex Kryuchkov</name>
+  </developer>
   <url type="homepage">https://github.com/alexkdeveloper/relaxator</url>
   <url type="bugtracker">https://github.com/alexkdeveloper/relaxator/issues/</url>
   <url type="help">http://github.com/alexkdeveloper/relaxator/issues</url>
